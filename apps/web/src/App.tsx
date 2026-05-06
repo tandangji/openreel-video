@@ -11,7 +11,13 @@ import { useProjectStore } from "./stores/project-store";
 import { useRouter } from "./hooks/use-router";
 import { useProjectRecovery } from "./hooks/useProjectRecovery";
 import { useKieAIPoller } from "./hooks/useKieAIPoller";
-import { SOCIAL_MEDIA_PRESETS, type SocialMediaCategory } from "@openreel/core";
+import { toast } from "./stores/notification-store";
+import {
+  SOCIAL_MEDIA_PRESETS,
+  createProjectSerializer,
+  createStorageEngine,
+  type SocialMediaCategory,
+} from "@openreel/core";
 import { TooltipProvider } from "@openreel/ui";
 
 const EditorInterface = lazy(() =>
@@ -45,6 +51,68 @@ function App() {
   const hasHandledInitialRoute = useRef(false);
 
   useKieAIPoller();
+
+  // URL auto-import: ?import=<URL> 쿼리 파라미터로 외부 ProjectFile JSON을 자동 로드
+  // 사용 예: https://openreel.../?import=https://shorts.../api/auto-edit/openreel-project/{job_id}
+  useEffect(() => {
+    if (hasHandledInitialRoute.current) return;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const importUrl = urlParams.get("import");
+    if (!importUrl) return;
+
+    hasHandledInitialRoute.current = true;
+
+    (async () => {
+      try {
+        const resp = await fetch(importUrl, { mode: "cors" });
+        if (!resp.ok) throw new Error(`Fetch failed: HTTP ${resp.status}`);
+        const jsonString = await resp.text();
+
+        const storage = createStorageEngine();
+        const serializer = createProjectSerializer(storage);
+        const validation = serializer.validateProjectJson(jsonString);
+        if (!validation.valid) {
+          throw new Error(validation.errors.join("; "));
+        }
+        const { project: importedProject } =
+          serializer.importFromJsonWithValidation(jsonString);
+        if (!importedProject) throw new Error("Import returned null");
+
+        // originalUrl이 있는 placeholder 미디어들을 fetch해 Blob으로 로드
+        const fetchedItems = await Promise.all(
+          importedProject.mediaLibrary.items.map(async (item) => {
+            if (item.isPlaceholder && item.originalUrl) {
+              try {
+                const r = await fetch(item.originalUrl, { mode: "cors" });
+                if (!r.ok) return item;
+                const blob = await r.blob();
+                return { ...item, blob, isPlaceholder: false };
+              } catch {
+                return item;
+              }
+            }
+            return item;
+          }),
+        );
+        const projectWithBlobs = {
+          ...importedProject,
+          mediaLibrary: { items: fetchedItems },
+        };
+
+        useProjectStore.getState().loadProject(projectWithBlobs);
+        navigate("editor");
+        const loadedCount = fetchedItems.filter((i) => i.blob).length;
+        toast.success(
+          "Project imported",
+          `Loaded "${importedProject.name}" — ${loadedCount}/${fetchedItems.length} media`,
+        );
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        toast.error("URL import failed", msg);
+      }
+    })();
+  }, [navigate]);
 
   useEffect(() => {
     if (hasHandledInitialRoute.current) return;

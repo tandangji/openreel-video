@@ -1,0 +1,425 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "id": "44be7bd1-8ce3-498c-9a58-314f1d125958",
+    "name": "테스트 숏폼 — 도산빌딩 4월 정산",
+    "createdAt": 1778061063179,
+    "modifiedAt": 1778061063179,
+    "settings": {
+      "width": 1080,
+      "height": 1920,
+      "frameRate": 30,
+      "sampleRate": 48000,
+      "channels": 2
+    },
+    "mediaLibrary": {
+      "items": [
+        {
+          "id": "m_clip_0",
+          "name": "cropped_000.mp4",
+          "type": "video",
+          "fileHandle": null,
+          "blob": null,
+          "metadata": {
+            "duration": 5.2,
+            "width": 1080,
+            "height": 1920,
+            "frameRate": 30,
+            "codec": "h264",
+            "sampleRate": 48000,
+            "channels": 2,
+            "fileSize": 1234567
+          },
+          "thumbnailUrl": null,
+          "waveformData": null,
+          "isPlaceholder": true,
+          "sourceFile": {
+            "name": "cropped_000.mp4",
+            "size": 1234567,
+            "lastModified": 1748000000000
+          }
+        },
+        {
+          "id": "m_clip_1",
+          "name": "cropped_001.mp4",
+          "type": "video",
+          "fileHandle": null,
+          "blob": null,
+          "metadata": {
+            "duration": 4.8,
+            "width": 1080,
+            "height": 1920,
+            "frameRate": 30,
+            "codec": "h264",
+            "sampleRate": 48000,
+            "channels": 2,
+            "fileSize": 1100000
+          },
+          "thumbnailUrl": null,
+          "waveformData": null,
+          "isPlaceholder": true,
+          "sourceFile": {
+            "name": "cropped_001.mp4",
+            "size": 1100000,
+            "lastModified": 1748000000000
+          }
+        },
+        {
+          "id": "m_clip_2",
+          "name": "cropped_002.mp4",
+          "type": "video",
+          "fileHandle": null,
+          "blob": null,
+          "metadata": {
+            "duration": 6.1,
+            "width": 1080,
+            "height": 1920,
+            "frameRate": 30,
+            "codec": "h264",
+            "sampleRate": 48000,
+            "channels": 2,
+            "fileSize": 1400000
+          },
+          "thumbnailUrl": null,
+          "waveformData": null,
+          "isPlaceholder": true,
+          "sourceFile": {
+            "name": "cropped_002.mp4",
+            "size": 1400000,
+            "lastModified": 1748000000000
+          }
+        },
+        {
+          "id": "m_narration",
+          "name": "narration.wav",
+          "type": "audio",
+          "fileHandle": null,
+          "blob": null,
+          "metadata": {
+            "duration": 15.5,
+            "width": 0,
+            "height": 0,
+            "frameRate": 0,
+            "codec": "pcm",
+            "sampleRate": 24000,
+            "channels": 1,
+            "fileSize": 800000
+          },
+          "thumbnailUrl": null,
+          "waveformData": null,
+          "isPlaceholder": true,
+          "sourceFile": {
+            "name": "narration.wav",
+            "size": 800000,
+            "lastModified": 1748000000000
+          }
+        },
+        {
+          "id": "m_bgm",
+          "name": "bgm.mp3",
+          "type": "audio",
+          "fileHandle": null,
+          "blob": null,
+          "metadata": {
+            "duration": 60.0,
+            "width": 0,
+            "height": 0,
+            "frameRate": 0,
+            "codec": "mp3",
+            "sampleRate": 44100,
+            "channels": 2,
+            "fileSize": 2400000
+          },
+          "thumbnailUrl": null,
+          "waveformData": null,
+          "isPlaceholder": true,
+          "sourceFile": {
+            "name": "bgm.mp3",
+            "size": 2400000,
+            "lastModified": 1748000000000
+          }
+        }
+      ]
+    },
+    "timeline": {
+      "tracks": [
+        {
+          "id": "t_video",
+          "type": "video",
+          "name": "Video",
+          "clips": [
+            {
+              "id": "c_video_0",
+              "mediaId": "m_clip_0",
+              "trackId": "t_video",
+              "startTime": 0.0,
+              "duration": 5.2,
+              "inPoint": 0,
+              "outPoint": 5.2,
+              "effects": [],
+              "audioEffects": [],
+              "transform": {
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "scale": {
+                  "x": 1,
+                  "y": 1
+                },
+                "rotation": 0,
+                "anchor": {
+                  "x": 0.5,
+                  "y": 0.5
+                },
+                "opacity": 1
+              },
+              "volume": 1.0,
+              "keyframes": []
+            },
+            {
+              "id": "c_video_1",
+              "mediaId": "m_clip_1",
+              "trackId": "t_video",
+              "startTime": 4.7,
+              "duration": 4.8,
+              "inPoint": 0,
+              "outPoint": 4.8,
+              "effects": [],
+              "audioEffects": [],
+              "transform": {
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "scale": {
+                  "x": 1,
+                  "y": 1
+                },
+                "rotation": 0,
+                "anchor": {
+                  "x": 0.5,
+                  "y": 0.5
+                },
+                "opacity": 1
+              },
+              "volume": 1.0,
+              "keyframes": []
+            },
+            {
+              "id": "c_video_2",
+              "mediaId": "m_clip_2",
+              "trackId": "t_video",
+              "startTime": 9.0,
+              "duration": 6.1,
+              "inPoint": 0,
+              "outPoint": 6.1,
+              "effects": [],
+              "audioEffects": [],
+              "transform": {
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "scale": {
+                  "x": 1,
+                  "y": 1
+                },
+                "rotation": 0,
+                "anchor": {
+                  "x": 0.5,
+                  "y": 0.5
+                },
+                "opacity": 1
+              },
+              "volume": 1.0,
+              "keyframes": []
+            }
+          ],
+          "transitions": [],
+          "locked": false,
+          "hidden": false,
+          "muted": false,
+          "solo": false
+        },
+        {
+          "id": "t_narration",
+          "type": "audio",
+          "name": "Narration",
+          "clips": [
+            {
+              "id": "c_narration",
+              "mediaId": "m_narration",
+              "trackId": "t_narration",
+              "startTime": 0,
+              "duration": 15.5,
+              "inPoint": 0,
+              "outPoint": 15.5,
+              "effects": [],
+              "audioEffects": [],
+              "transform": {
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "scale": {
+                  "x": 1,
+                  "y": 1
+                },
+                "rotation": 0,
+                "anchor": {
+                  "x": 0.5,
+                  "y": 0.5
+                },
+                "opacity": 1
+              },
+              "volume": 1.0,
+              "keyframes": []
+            }
+          ],
+          "transitions": [],
+          "locked": false,
+          "hidden": false,
+          "muted": false,
+          "solo": false
+        },
+        {
+          "id": "t_bgm",
+          "type": "audio",
+          "name": "BGM",
+          "clips": [
+            {
+              "id": "c_bgm",
+              "mediaId": "m_bgm",
+              "trackId": "t_bgm",
+              "startTime": 0,
+              "duration": 15.1,
+              "inPoint": 0,
+              "outPoint": 15.1,
+              "effects": [],
+              "audioEffects": [],
+              "transform": {
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "scale": {
+                  "x": 1,
+                  "y": 1
+                },
+                "rotation": 0,
+                "anchor": {
+                  "x": 0.5,
+                  "y": 0.5
+                },
+                "opacity": 1
+              },
+              "volume": 0.3,
+              "keyframes": []
+            }
+          ],
+          "transitions": [],
+          "locked": false,
+          "hidden": false,
+          "muted": false,
+          "solo": false
+        }
+      ],
+      "subtitles": [
+        {
+          "id": "s_0",
+          "text": "안녕하세요 오늘은",
+          "startTime": 0.0,
+          "endTime": 2.5,
+          "words": [
+            {
+              "text": "안녕하세요",
+              "startTime": 0.0,
+              "endTime": 1.2
+            },
+            {
+              "text": "오늘은",
+              "startTime": 1.3,
+              "endTime": 2.5
+            }
+          ],
+          "animationStyle": "word-highlight",
+          "style": {
+            "fontFamily": "Noto Sans KR",
+            "fontSize": 56,
+            "color": "#FFFFFF",
+            "backgroundColor": "rgba(0,0,0,0.5)",
+            "position": "bottom",
+            "highlightColor": "#FFFF00"
+          }
+        },
+        {
+          "id": "s_1",
+          "text": "재미있는 영상을 만들어 보겠습니다",
+          "startTime": 2.5,
+          "endTime": 6.0,
+          "words": [
+            {
+              "text": "재미있는",
+              "startTime": 2.5,
+              "endTime": 3.5
+            },
+            {
+              "text": "영상을",
+              "startTime": 3.5,
+              "endTime": 4.5
+            },
+            {
+              "text": "만들어",
+              "startTime": 4.5,
+              "endTime": 5.2
+            },
+            {
+              "text": "보겠습니다",
+              "startTime": 5.2,
+              "endTime": 6.0
+            }
+          ],
+          "animationStyle": "word-highlight",
+          "style": {
+            "fontFamily": "Noto Sans KR",
+            "fontSize": 56,
+            "color": "#FFFFFF",
+            "backgroundColor": "rgba(0,0,0,0.5)",
+            "position": "bottom",
+            "highlightColor": "#FFFF00"
+          }
+        },
+        {
+          "id": "s_2",
+          "text": "끝까지 봐주세요",
+          "startTime": 6.0,
+          "endTime": 10.0,
+          "words": [
+            {
+              "text": "끝까지",
+              "startTime": 6.0,
+              "endTime": 7.5
+            },
+            {
+              "text": "봐주세요",
+              "startTime": 7.5,
+              "endTime": 10.0
+            }
+          ],
+          "animationStyle": "word-highlight",
+          "style": {
+            "fontFamily": "Noto Sans KR",
+            "fontSize": 56,
+            "color": "#FFFFFF",
+            "backgroundColor": "rgba(0,0,0,0.5)",
+            "position": "bottom",
+            "highlightColor": "#FFFF00"
+          }
+        }
+      ],
+      "duration": 15.1,
+      "markers": []
+    }
+  }
+}
